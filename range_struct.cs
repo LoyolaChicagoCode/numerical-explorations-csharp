@@ -53,7 +53,7 @@ class Program
     static void Main(string[] args)
     {
         if (args.Length < 1) {
-            Console.WriteLine("usage range_struct.exe number-of-iterations");
+            Console.WriteLine("usage range_struct.exe number-of-darts");
         } else {
             TimePi(int.Parse(args[0]));
         }
