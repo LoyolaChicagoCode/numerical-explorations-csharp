@@ -10,14 +10,16 @@ using System.Linq;
 // This version uses a C# struct (value class) for getting a range of random pairs.
 
 struct RandomPoint {
-    private static Random r = new Random();
-    public double x, y;
+    private static readonly Random r = new Random();
+    public readonly double x, y;
+
+    public RandomPoint(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
 
     public static RandomPoint Create () {
-        var p = new RandomPoint();
-        p.x = r.NextDouble();
-        p.y = r.NextDouble();
-        return p;
+        return new RandomPoint(r.NextDouble(), r.NextDouble());
     }
 }
 
