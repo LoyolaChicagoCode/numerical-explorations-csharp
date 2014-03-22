@@ -31,13 +31,20 @@ class Program
         return 4.0 * c / n;
     }
 
-    static void Main(string[] args)
-    {
+    static void TimePi(int n) {
         var timer = new System.Diagnostics.Stopwatch();
         timer.Start();
-        var n = int.Parse(args[0]);
         var myPi = pi(n);   
         timer.Stop();
         Console.WriteLine("Points = {0}, Time = {1}, Pi = {2}", n, timer.ElapsedMilliseconds, myPi);
+    }
+
+    static void Main(string[] args)
+    {
+        if (args.Length < 1) {
+            Console.WriteLine("usage listofstruct.exe number-of-iterations");
+        } else {
+            TimePi(int.Parse(args[0]));
+        }
     }
 }
