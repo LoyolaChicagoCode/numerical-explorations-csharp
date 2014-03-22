@@ -34,8 +34,10 @@ class Program
         return x * x;
     }
 
-    static double pi(double incircle, double n) {
-        return 4.0 * incircle / n;
+    static double pi(int n) {
+        var pairs = RandomPairs(n);
+        var c = pairs.Count(p => sqr(p.x) + sqr(p.y) <= 1.0);
+        return 4.0 * c / n;
     }
 
     static void Main(string[] args)
@@ -43,10 +45,8 @@ class Program
         var timer = new System.Diagnostics.Stopwatch();
         timer.Start();
         var n = int.Parse(args[0]);
-        var pairs = RandomPairs(n);
-        var c = pairs.Count(p => sqr(p.x) + sqr(p.y) <= 1.0);
+        var myPi = pi(n);   
         timer.Stop();
-        Console.WriteLine("Points = {0}, In Circle = {1}, Time = {2}, Pi = {3}", n, c, timer.ElapsedMilliseconds, pi(c, n));
-
+        Console.WriteLine("Points = {0}, Time = {1}, Pi = {2}", n, timer.ElapsedMilliseconds, myPi);
     }
 }
