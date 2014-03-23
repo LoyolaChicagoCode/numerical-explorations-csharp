@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tuple", "tuple\tuple.csproj", "{DBE47A2B-2C30-46DD-98ED-9C42D6FC91AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "struct", "struct\struct.csproj", "{C3704DC2-8C78-434C-9498-6CE0B068CC76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3704DC2-8C78-434C-9498-6CE0B068CC76}.Debug|x86.ActiveCfg = Debug|x86
+		{C3704DC2-8C78-434C-9498-6CE0B068CC76}.Debug|x86.Build.0 = Debug|x86
+		{C3704DC2-8C78-434C-9498-6CE0B068CC76}.Release|x86.ActiveCfg = Release|x86
+		{C3704DC2-8C78-434C-9498-6CE0B068CC76}.Release|x86.Build.0 = Release|x86
+		{DBE47A2B-2C30-46DD-98ED-9C42D6FC91AB}.Debug|x86.ActiveCfg = Debug|x86
+		{DBE47A2B-2C30-46DD-98ED-9C42D6FC91AB}.Debug|x86.Build.0 = Debug|x86
+		{DBE47A2B-2C30-46DD-98ED-9C42D6FC91AB}.Release|x86.ActiveCfg = Release|x86
+		{DBE47A2B-2C30-46DD-98ED-9C42D6FC91AB}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = tuple\tuple.csproj
+	EndGlobalSection
+EndGlobal
