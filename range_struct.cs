@@ -10,7 +10,7 @@ using System.Linq;
 // This version uses a C# struct (value class) for getting a range of random pairs.
 
 struct RandomPoint {
-    private static readonly Random r = new Random();
+    private static readonly Random r = new Random(int.MaxValue-1);
     public readonly double x, y;
 
     public RandomPoint(double x, double y) {
@@ -25,9 +25,9 @@ struct RandomPoint {
 
 class Program
 {
-    public static IEnumerable<RandomPoint> RandomPairs (int numPairs)
+    public static IEnumerable<RandomPoint> RandomPairs (long numPairs)
     {
-        for (var i=0; i < numPairs; i++) {
+        for (var i=0L; i < numPairs; i++) {
             yield return RandomPoint.Create();
         }
     }
@@ -36,13 +36,13 @@ class Program
         return x * x;
     }
 
-    static double pi(int n) {
+    static double pi(long n) {
         var pairs = RandomPairs(n);
-        var c = pairs.Count(p => sqr(p.x) + sqr(p.y) <= 1.0);
+        var c = pairs.LongCount(p => sqr(p.x) + sqr(p.y) <= 1.0);
         return 4.0 * c / n;
     }
 
-    static void TimePi(int n) {
+    static void TimePi(long n) {
         var timer = new System.Diagnostics.Stopwatch();
         timer.Start();
         var myPi = pi(n);
@@ -55,7 +55,7 @@ class Program
         if (args.Length < 1) {
             Console.WriteLine("usage range_struct.exe number-of-darts");
         } else {
-            TimePi(int.Parse(args[0]));
+            TimePi(long.Parse(args[0]));
         }
     }
 }
