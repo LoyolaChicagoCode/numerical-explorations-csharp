@@ -25,7 +25,7 @@ struct RandomPoint {
 
 class Program
 {
-    public static IEnumerable<RandomPoint> RandomPairs (int numPairs) 
+    public static IEnumerable<RandomPoint> RandomPairs (int numPairs)
     {
         for (var i=0; i < numPairs; i++) {
             yield return RandomPoint.Create();
