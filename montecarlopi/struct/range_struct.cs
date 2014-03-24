@@ -11,6 +11,7 @@ using System.Linq;
 
 struct RandomPoint {
 	private static readonly Random r = new Random(int.MaxValue-1);
+
 	public readonly double x, y;
 
 	public RandomPoint(double x, double y) {
@@ -23,7 +24,7 @@ struct RandomPoint {
 	}
 }
 
-class Program
+class MonteCarloPi
 {
 	public static IEnumerable<RandomPoint> RandomPairs (long numPairs)
 	{
@@ -32,12 +33,11 @@ class Program
 		}
 	}
 
-	static double sqr(double x) {
-		return x * x;
-	}
+	delegate double d2d(double d);
 
 	static double pi(long n) {
 		var pairs = RandomPairs(n);
+		d2d sqr = x => x * x;
 		var c = pairs.LongCount(p => sqr(p.x) + sqr(p.y) <= 1.0);
 		return 4.0 * c / n;
 	}

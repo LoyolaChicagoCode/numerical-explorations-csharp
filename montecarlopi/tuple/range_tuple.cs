@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-// This example shows how to take advantage of C# range with lambda expressions
-// to do our ongoin Monte Carlo exploration. While you see the word "var" here in various
-// places, it is "val" and functional style.
-
-// This version uses the C# native Tuple, which appears to be slower than using
-// a C# struct (value class).
+// Please note that this version was just to test the effectiveness of working with tuples. It is a tad slower
+// than working with structs.
+// We will not be putting to much more work into this version.
 
 class Program
 {
